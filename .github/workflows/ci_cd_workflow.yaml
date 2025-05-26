@@ -33,6 +33,11 @@ jobs:
       name: download_and_export_model
       runs-on: ubuntu-latest
       steps:
+         - name: Checkout code repo
+           # this action clones current repository to the VM where our job is running
+           # https://github.com/actions/checkout
+           uses: actions/checkout@v4
+
          - name: Setup uv
            run: curl -LsSf https://astral.sh/uv/install.sh | sh
            
